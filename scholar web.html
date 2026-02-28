@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Scholar Computer Institute of Technologies</title>
+
+<style>
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+
+/* NAVBAR */
+
+nav{
+background:#0a2540;
+color:white;
+display:flex;
+justify-content:space-between;
+padding:15px 40px;
+position:sticky;
+top:0;
+}
+
+nav h2{
+color:#00c6ff;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav ul li{
+margin-left:20px;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+
+/* HERO */
+
+.hero{
+
+height:90vh;
+
+background:
+linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url("https://images.unsplash.com/photo-1581092335397-9583eb92d232");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+color:white;
+text-align:center;
+
+}
+
+.hero h1{
+font-size:50px;
+}
+
+.hero button{
+
+margin-top:20px;
+padding:12px 30px;
+border:none;
+background:#00c6ff;
+color:white;
+cursor:pointer;
+border-radius:6px;
+font-size:18px;
+
+}
+
+
+/* SECTION */
+
+section{
+padding:60px 20px;
+text-align:center;
+}
+
+
+/* COURSE BUTTONS */
+
+.course-container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.course-btn{
+
+padding:15px 30px;
+margin:15px;
+
+border:none;
+
+background:linear-gradient(45deg,#00c6ff,#0072ff);
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+border-radius:8px;
+
+transition:0.4s;
+
+animation:float 3s infinite;
+
+}
+
+.course-btn:hover{
+
+transform:scale(1.1);
+box-shadow:0 0 15px #00c6ff;
+
+}
+
+
+@keyframes float{
+
+0%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0);}
+
+}
+
+
+/* FEATURES */
+
+.features{
+
+background:#0a2540;
+color:white;
+
+}
+
+
+/* CONTACT */
+
+.contact{
+
+background:#f4f4f4;
+
+}
+
+
+/* FOOTER */
+
+footer{
+
+background:#0a2540;
+color:white;
+padding:15px;
+
+}
+
+
+/* POPUP FORM */
+
+.form-popup{
+
+display:none;
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,0.7);
+
+justify-content:center;
+align-items:center;
+
+}
+
+.form-container{
+
+background:white;
+padding:30px;
+border-radius:10px;
+width:300px;
+
+}
+
+.form-container input,
+.form-container textarea{
+
+width:100%;
+padding:10px;
+margin:10px 0;
+
+}
+
+.submit-btn{
+
+background:#00c6ff;
+color:white;
+border:none;
+padding:10px;
+width:100%;
+cursor:pointer;
+
+}
+
+.close-btn{
+
+background:red;
+color:white;
+border:none;
+padding:10px;
+width:100%;
+margin-top:10px;
+cursor:pointer;
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:30px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+
+<!-- NAVBAR -->
+
+<nav>
+
+<h2>Scholar Institute</h2>
+
+<ul>
+
+<li><a href="#">Home</a></li>
+<li><a href="#">Courses</a></li>
+<li><a href="#">Contact</a></li>
+
+</ul>
+
+</nav>
+
+
+
+<!-- HERO -->
+
+<div class="hero">
+
+<div>
+
+<h1>Scholar Computer Institute</h1>
+
+<p>Best Computer Training Institute in Raebareli</p>
+
+<button onclick="openForm('General Admission')">Apply Now</button>
+
+</div>
+
+</div>
+
+
+
+<!-- COURSES -->
+
+<section>
+
+<h2>Our Popular Courses</h2>
+
+<div class="course-container">
+
+<button class="course-btn" onclick="openForm('CCC Course')">CCC Course</button>
+
+<button class="course-btn" onclick="openForm('DCA Pro')">DCA Pro</button>
+
+<button class="course-btn" onclick="openForm('O Level')">O Level</button>
+
+<button class="course-btn" onclick="openForm('Web Designing')">Web Designing</button>
+
+<button class="course-btn" onclick="openForm('Tally Prime')">Tally Prime</button>
+
+<button class="course-btn" onclick="openForm('Graphic Designing')">Graphic Designing</button>
+
+</div>
+
+</section>
+
+
+
+<!-- FEATURES -->
+
+<section class="features">
+
+<h2>Why Choose Us</h2>
+
+<p>Expert Teachers | Government Certificate | Job Support</p>
+
+</section>
+
+
+
+<!-- CONTACT -->
+
+<section class="contact">
+
+<h2>Contact</h2>
+
+<p>📍 Tripula Chauraha, Raebareli</p>
+
+<p>📞 8004036061</p>
+
+<p>📧 abhayvermapc@gmail.com</p>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>© 2026 Scholar Computer Institute</p>
+
+</footer>
+
+
+
+<!-- POPUP FORM -->
+
+<div class="form-popup" id="popupForm">
+
+<form action="https://formsubmit.co/abhayvermapc@gmail.com" method="POST" class="form-container">
+
+<h2>Admission Form</h2>
+
+<input type="hidden" name="_captcha" value="false">
+
+<input type="hidden" name="_template" value="table">
+
+<input type="hidden" name="course" id="courseName">
+
+<input type="text" name="name" placeholder="Enter your name" required>
+
+<input type="email" name="email" placeholder="Enter your email" required>
+
+<input type="tel" name="phone" placeholder="Enter phone number" required>
+
+<textarea name="message" placeholder="Message"></textarea>
+
+<button type="submit" class="submit-btn">Submit</button>
+
+<button type="button" class="close-btn" onclick="closeForm()">Close</button>
+
+</form>
+
+</div>
+
+
+
+<!-- SCRIPT -->
+
+<script>
+
+function openForm(course){
+
+document.getElementById("popupForm").style.display="flex";
+
+document.getElementById("courseName").value=course;
+
+}
+
+function closeForm(){
+
+document.getElementById("popupForm").style.display="none";
+
+}
+
+</script>
+
+
+
+</body>
+
+</html>
